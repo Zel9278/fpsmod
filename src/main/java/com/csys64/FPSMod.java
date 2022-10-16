@@ -1,11 +1,7 @@
 package com.csys64;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -14,7 +10,6 @@ import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.client.ConfigGuiHandler;
-import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 import com.csys64.config.ModConfig;
@@ -33,7 +28,7 @@ public class FPSMod {
     public static void setup(FMLCommonSetupEvent event) {
         LOGGER.info("[INFO] Setup FPSMod");
         MinecraftForge.EVENT_BUS.register(ShowFPS.class);
-        MinecraftForge.EVENT_BUS.register(MenuButton.class);
+        MinecraftForge.EVENT_BUS.register(PauseMenuButton.class);
         ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class,
             () -> new ConfigGuiHandler.ConfigGuiFactory((mc, screen) -> new ConfigScreen()));
     }

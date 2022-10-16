@@ -16,8 +16,8 @@ public final class ConfigScreen extends Screen {
 
     protected void init() {
         Button done = new Button(
-                (this.width - 50) / 2,
-                this.height - 50,
+                (this.width / 2) - 50,
+                this.height - 40,
                 100,
                 20,
                 new TranslatableComponent("gui.done"),
