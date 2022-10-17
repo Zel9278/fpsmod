@@ -1,4 +1,13 @@
 {
   "fpsmod.configGui.title": "FPSModの設定",
-  "fpsmod.pausescreen.button.title": "FPSModの設定を開く"
+  "fpsmod.configGui.text": "この画面はescを押すと変更が破棄されます。",
+  "fpsmod.pausescreen.button.title": "FPSModの設定を開く",
+  "fpsmod.pausescreen.cursed.text1": "なんで",
+  "fpsmod.pausescreen.cursed.text2": "どうして",
+  "fpsmod.pausescreen.cursed.text3": "呪ってやる",
+  "fpsmod.pausescreen.cursed.text4": "閉じないで",
+  "fpsmod.pausescreen.cursed.text5": "寂しい",
+  "fpsmod.pausescreen.cursed.text6": "悲しい",
+  "fpsmod.pausescreen.cursed.text7": "許さない",
+  "fpsmod.pausescreen.cursed.text8": "もうマヂ無理"
 }

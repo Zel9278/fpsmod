@@ -1,14 +1,10 @@
 package com.csys64;
 
-import com.csys64.config.ModConfig;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiComponent;
 
 public class FPSRenderHandler {
-    public static void render(PoseStack poseStack, int w, int h) {
-        int posX = ModConfig.x.get() * w / 100;
-        int posY = ModConfig.y.get() * h / 100;
+    public static void render(PoseStack poseStack, int x, int y) {
         String fps = Minecraft.getInstance().fpsString.split(" ")[0];
         String fpsString = fps + " fps";
         int fpsInt = Integer.parseInt(fps);
@@ -23,6 +19,6 @@ public class FPSRenderHandler {
             fontColor = 0xFF0000;
         }
 
-        Minecraft.getInstance().font.draw(poseStack, fpsString, posX - fontWidth, posY, fontColor);
+        Minecraft.getInstance().font.draw(poseStack, fpsString, x - fontWidth, y, fontColor);
     }
 }

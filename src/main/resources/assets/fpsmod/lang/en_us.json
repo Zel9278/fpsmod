@@ -1,4 +1,13 @@
 {
   "fpsmod.configGui.title": "FPSMod Config",
-  "fpsmod.pausescreen.button.title": "Open FPSMod Config"
+  "fpsmod.configGui.text": "Press esc to discard changes on this screen.",
+  "fpsmod.pausescreen.button.title": "Open FPSMod Config",
+  "fpsmod.pausescreen.cursed.text1": "Why?",
+  "fpsmod.pausescreen.cursed.text2": "What happen...",
+  "fpsmod.pausescreen.cursed.text3": "I curse you.",
+  "fpsmod.pausescreen.cursed.text4": "Don't close it!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+  "fpsmod.pausescreen.cursed.text5": "lonely",
+  "fpsmod.pausescreen.cursed.text6": "sad",
+  "fpsmod.pausescreen.cursed.text7": "I won't allow it...",
+  "fpsmod.pausescreen.cursed.text8": "I can't do it anymore."
 }

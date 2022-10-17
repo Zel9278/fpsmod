@@ -1,5 +1,8 @@
 package com.csys64;
 
+import com.csys64.config.ConfigScreen;
+import com.csys64.config.ModConfig;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -11,15 +14,23 @@ import net.minecraftforge.fml.common.Mod;
 public class ShowFPS {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void eventHandler(ScreenEvent.DrawScreenEvent event) {
+        if (event.getScreen() instanceof ConfigScreen) return;
         int w = event.getScreen().width;
         int h = event.getScreen().height;
-        FPSRenderHandler.render(event.getPoseStack(), w, h);
+        int posX = ModConfig.x.get() * w / 100;
+        int posY = ModConfig.y.get() * h / 100;
+
+        FPSRenderHandler.render(event.getPoseStack(), posX, posY);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void eventHandler(RenderGameOverlayEvent event) {
+        if (Minecraft.getInstance().isPaused()) return;
         int w = event.getWindow().getGuiScaledWidth();
         int h = event.getWindow().getGuiScaledHeight();
-        FPSRenderHandler.render(event.getMatrixStack(), w, h);
+        int posX = ModConfig.x.get() * w / 100;
+        int posY = ModConfig.y.get() * h / 100;
+
+        FPSRenderHandler.render(event.getMatrixStack(), posX, posY);
     }
 }

@@ -10,8 +10,23 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Random;
+
 @Mod.EventBusSubscriber({Dist.CLIENT})
 public class PauseMenuButton {
+    private static final Random random = new Random();
+    private static int num = 0;
+    private static final TranslatableComponent[] strings = {
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text1"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text2"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text3"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text4"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text5"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text6"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text7"),
+            new TranslatableComponent("fpsmod.pausescreen.cursed.text8")
+    };
+
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void eventHandler(ScreenEvent.InitScreenEvent event) {
         if (event.getScreen() instanceof PauseScreen) {
@@ -25,6 +40,25 @@ public class PauseMenuButton {
             );
 
             event.addListener(button);
+            num = random.nextInt(1000);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void eventHandler(ScreenEvent.DrawScreenEvent event) {
+        if (event.getScreen() instanceof PauseScreen) {
+            if (num >= 900) {
+                Button button = new Button(
+                        random.nextInt(event.getScreen().width),
+                        random.nextInt(event.getScreen().height),
+                        0,
+                        0,
+                        strings[random.nextInt(strings.length-1)],
+                        b -> {}
+                );
+                button.setFGColor(0xFF0000);
+                event.getScreen().renderables.add(0, button);
+            }
         }
     }
 }
