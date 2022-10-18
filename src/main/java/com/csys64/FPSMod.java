@@ -1,7 +1,6 @@
 package com.csys64;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -29,6 +28,7 @@ public class FPSMod {
         LOGGER.info("[INFO] Setup FPSMod");
         MinecraftForge.EVENT_BUS.register(ShowFPS.class);
         MinecraftForge.EVENT_BUS.register(PauseMenuButton.class);
+
         ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class,
             () -> new ConfigGuiHandler.ConfigGuiFactory((mc, screen) -> new ConfigScreen()));
     }

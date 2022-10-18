@@ -6,8 +6,9 @@ import net.minecraft.client.Minecraft;
 public class FPSRenderHandler {
     public static void render(PoseStack poseStack, int x, int y) {
         String fps = Minecraft.getInstance().fpsString.split(" ")[0];
-        String fpsString = fps + " fps";
-        int fpsInt = Integer.parseInt(fps);
+        String fuckingOptifineFPSStringSplit = fps.split("/")[0];
+        String fpsString = fuckingOptifineFPSStringSplit + " fps";
+        int fpsInt = Integer.parseInt(fuckingOptifineFPSStringSplit);
         int fontWidth = Minecraft.getInstance().font.width(fpsString) / 2;
         int fontColor = 0xFFFFFF;
 

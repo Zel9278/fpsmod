@@ -1,6 +1,7 @@
 package com.csys64;
 
 import com.csys64.config.ConfigScreen;
+import com.csys64.config.ModConfig;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -47,6 +48,7 @@ public class PauseMenuButton {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void eventHandler(ScreenEvent.DrawScreenEvent event) {
         if (event.getScreen() instanceof PauseScreen) {
+            if (!ModConfig.cursedText.get()) return;
             if (num >= 900) {
                 Button button = new Button(
                         random.nextInt(event.getScreen().width),
